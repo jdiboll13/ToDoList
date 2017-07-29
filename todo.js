@@ -19,9 +19,9 @@ app.get('/', (req, res) => {
 
 app.post('/add', (req, res) => {
   todos.push(req.body.todo)
-  console.log(todos)
   res.redirect('/')
 })
+//this part isn't doing what I want.
 app.post('/done', (req, res) => {
   let i = todos.indexOf(req.body.checked)
   if (i != -1) {
