@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <form class="addtolist" action="/add" method="post">
+        <input type="text" name="todo" value="" placeholder="Add To Do Item"><button type="submit" name="submit">Add</button>
+      </form>
+      {{#todos}}
+      <form class="todolist" action="/done" method="post">
+        <p><button type="button" name="done">Done!</button><span class="listitem">{{todos}}</span></p>
+      </form>
+      {{/todos}}
+      {{#done}}
+      <form class="done" action="" method="post">
+        <del class="doneitem">{{.}}</del>
+      </form>
+      {{/done}}
+    </div>
+  </body>
+</html>
