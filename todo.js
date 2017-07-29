@@ -19,14 +19,16 @@ app.get('/', (req, res) => {
 
 app.post('/add', (req, res) => {
   todos.push(req.body.todo)
+  console.log(todos)
   res.redirect('/')
 })
 app.post('/done', (req, res) => {
-  var i = todos.indexOf(req.body.done)
+  let i = todos.indexOf(req.body.checked)
   if (i != -1) {
     todos.splice(i, 1)
-    done.push(req.body.done)
+    done.push(req.body.checked)
   }
+  console.log(done)
   res.redirect('/')
 })
 

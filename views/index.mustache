@@ -10,12 +10,14 @@
       <form class="addtolist" action="/add" method="post">
         <input type="text" name="todo" value="" placeholder="Add To Do Item"><button type="submit" name="submit">Add</button>
       </form>
+      <h3>To Do List</h3>
       {{#todos}}
       <form class="todolist" action="/done" method="post">
-        <p><button type="button" name="done">Done!</button><span class="listitem">{{todos}}</span></p>
+          <input type="radio" name="todoitem" value=""><label for="todoitem">{{.}}</label>
       </form>
       {{/todos}}
       {{#done}}
+      <h3>Completed</h3>
       <form class="done" action="" method="post">
         <del class="doneitem">{{.}}</del>
       </form>
