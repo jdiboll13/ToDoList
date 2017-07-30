@@ -13,7 +13,7 @@
       <h3>To Do List</h3>
       {{#todos}}
       <form class="todolist" action="/done" method="post">
-          <input type="checkbox" name="todoitem" value=""><label for="todoitem">{{.}}</label>
+        <input type="checkbox" name="todoitem" value=""><label for="todoitem">{{.}}</label>
       </form>
       {{/todos}}
       {{#done}}
