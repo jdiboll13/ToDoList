@@ -13,15 +13,27 @@
       <h3>To Do List</h3>
       {{#todos}}
       <form class="todolist" action="/done" method="post">
-          <input type="checkbox" name="todoitem" value="{{.}}"><label for="todoitem">{{.}}</label>
+          <input type="checkbox" name="todoitem" value=""><label for="todoitem">{{.}}</label>
       </form>
       {{/todos}}
       {{#done}}
       <h3>Completed</h3>
-      <form class="done" action="" method="post">
-        <del class="doneitem">{{.}}</del>
+      <form class="done" action="/" method="post">
+        <input type="checkbox" name="doneitem" value="" checked><del class="doneitem">{{.}}</del>
       </form>
       {{/done}}
     </div>
   </body>
 </html>
+
+
+<!-- <ul>
+  {{#done}}
+    <li><input type="checkbox" checked>
+    <del>{{.}}</del></li>
+  {{/done}}
+  {{#notDone}}
+    <li><input type="checkbox">
+      {{.}}</li>
+  {{/notDone}}
+</ul> -->

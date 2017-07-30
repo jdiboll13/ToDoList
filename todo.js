@@ -10,8 +10,8 @@ app.use(express.static('public'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-let todos = []
-let done = []
+const todos = []
+const done = []
 
 app.get('/', (req, res) => {
   res.render('index', { todos: todos, done: done })
@@ -21,13 +21,9 @@ app.post('/add', (req, res) => {
   todos.push(req.body.todo)
   res.redirect('/')
 })
-//this part isn't doing what I want.
+// this part isn't doing what I want.
 app.post('/done', (req, res) => {
-  let i = todos.indexOf(req.body.checked)
-  if (i != -1) {
-    todos.splice(i, 1)
-    done.push(req.body.checked)
-  }
+  done.push(res.body.checked)
   console.log(done)
   res.redirect('/')
 })
