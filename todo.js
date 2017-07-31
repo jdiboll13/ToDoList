@@ -47,11 +47,6 @@ app.post('/done', (req, res) => {
     req.session.todoList = todoList
   }
 
-  // done.push(req.body.todo)
-  // const indexOfItem = todos.indexOf(req.body.todo)
-  // todos.splice(indexOfItem, 1)
-  // req.session.todos = todos
-  // console.log(done)
   res.redirect('/')
 })
 
