@@ -7,33 +7,24 @@
   </head>
   <body>
     <div class="wrapper">
-      <form class="addtolist" action="/add" method="post">
-        <input type="text" name="todo" value="" placeholder="Add To Do Item"><button type="submit" name="submit">Add</button>
+      <form class="" action="/add" method="post">
+        <input type="text" name="todo" value="" placeholder="Add To Do Item..."><button type="submit" name="submit">+</button>
       </form>
       <h3>To Do List</h3>
       {{#todos}}
-      <form class="todolist" action="/done" method="post">
-        <input type="checkbox" name="todoitem" value=""><label for="todoitem">{{.}}</label>
+      <ul>
+      <form class="" action="/done" method="post">
+        <li><button type="submit" name="todo" value="{{.}}">&#10003</button>{{.}}</li>
       </form>
+      </ul>
       {{/todos}}
-      {{#done}}
       <h3>Completed</h3>
-      <form class="done" action="/" method="post">
-        <input type="checkbox" name="doneitem" value="" checked><del class="doneitem">{{.}}</del>
+      {{#done}}
+      <ul>
+        <li><del>{{.}}</del></li>
       </form>
+      </ul>
       {{/done}}
     </div>
   </body>
 </html>
-
-
-<!-- <ul>
-  {{#done}}
-    <li><input type="checkbox" checked>
-    <del>{{.}}</del></li>
-  {{/done}}
-  {{#notDone}}
-    <li><input type="checkbox">
-      {{.}}</li>
-  {{/notDone}}
-</ul> -->

@@ -19,11 +19,14 @@ app.get('/', (req, res) => {
 
 app.post('/add', (req, res) => {
   todos.push(req.body.todo)
+  console.log(todos)
   res.redirect('/')
 })
 // this part isn't doing what I want.
 app.post('/done', (req, res) => {
-  done.push(res.body.checked)
+  done.push(req.body.todo)
+  const indexOfItem = todos.indexOf(req.body.todo)
+  todos.splice(indexOfItem, 1)
   console.log(done)
   res.redirect('/')
 })
