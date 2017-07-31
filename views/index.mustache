@@ -11,20 +11,20 @@
         <input type="text" name="todo" value="" placeholder="Add To Do Item..."><button type="submit" name="submit">+</button>
       </form>
       <h3>To Do List</h3>
-      {{#todos}}
+      {{#notcompleted}}
       <ul>
       <form class="" action="/done" method="post">
-        <li><button type="submit" name="todo" value="{{.}}">&#10003</button>{{.}}</li>
+        <li><button type="submit" name="id" value="{{id}}">&#10003</button>{{todo}}</li>
       </form>
       </ul>
-      {{/todos}}
+      {{/notcompleted}}
       <h3>Completed</h3>
-      {{#done}}
+      {{#completed}}
       <ul>
-        <li><del>{{.}}</del></li>
+        <li><del>{{todo}}</del></li>
       </form>
       </ul>
-      {{/done}}
+      {{/completed}}
     </div>
   </body>
 </html>
